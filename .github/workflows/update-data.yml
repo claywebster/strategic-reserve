@@ -1,0 +1,41 @@
+name: Refresh EIA data
+
+on:
+  schedule:
+    # 16:00 UTC daily (~noon ET), after EIA's twice-daily bulk update.
+    - cron: "0 16 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch latest EIA data
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+        run: node scripts/fetch-data.mjs
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "spr-data-bot"
+          git config user.email "actions@github.com"
+          if [ -n "$(git status --porcelain data)" ]; then
+            git add data
+            git commit -m "data: refresh EIA figures ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No data changes."
+          fi

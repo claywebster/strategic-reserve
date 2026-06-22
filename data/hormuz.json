@@ -1,0 +1,12 @@
+{
+  "asOf": "2025-06",
+  "flowBblPerDay": 20.9,
+  "flowUnit": "million barrels per day",
+  "crudeBblPerDay": 15.0,
+  "productsBblPerDay": 5.5,
+  "shipsPerDay": 138,
+  "shareOfGlobalOil": "~20% of global petroleum liquids consumption",
+  "note": "Total oil flows through the Strait of Hormuz. No free real-time tanker feed exists; EIA republishes these estimates (sourced from Vortexa) periodically.",
+  "source": "U.S. Energy Information Administration, World Oil Transit Chokepoints / Today in Energy",
+  "sourceUrl": "https://www.eia.gov/todayinenergy/detail.php?id=65504"
+}

@@ -1,0 +1,105 @@
+{
+  "asOf": "2026-06-22",
+  "unit": "million barrels",
+  "current": 340.3,
+  "latestDropM": 8.9,
+  "lowestSince": "July 1983",
+  "peak": {
+    "year": 2010,
+    "value": 726.6
+  },
+  "source": "U.S. Energy Information Administration, Weekly Ending Stocks of Crude Oil in the SPR (WCSSTUS1)",
+  "sourceUrl": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=WCSSTUS1&f=W",
+  "annual": [
+    {
+      "year": 2006,
+      "barrels": 688.6
+    },
+    {
+      "year": 2007,
+      "barrels": 696.4
+    },
+    {
+      "year": 2008,
+      "barrels": 701.8
+    },
+    {
+      "year": 2009,
+      "barrels": 726.1
+    },
+    {
+      "year": 2010,
+      "barrels": 726.5
+    },
+    {
+      "year": 2011,
+      "barrels": 696
+    },
+    {
+      "year": 2012,
+      "barrels": 695
+    },
+    {
+      "year": 2013,
+      "barrels": 696
+    },
+    {
+      "year": 2014,
+      "barrels": 691
+    },
+    {
+      "year": 2015,
+      "barrels": 695.1
+    },
+    {
+      "year": 2016,
+      "barrels": 695.1
+    },
+    {
+      "year": 2017,
+      "barrels": 663.7
+    },
+    {
+      "year": 2018,
+      "barrels": 649.1
+    },
+    {
+      "year": 2019,
+      "barrels": 635
+    },
+    {
+      "year": 2020,
+      "barrels": 638.1
+    },
+    {
+      "year": 2021,
+      "barrels": 593.7
+    },
+    {
+      "year": 2022,
+      "barrels": 372.4
+    },
+    {
+      "year": 2023,
+      "barrels": 354.4
+    },
+    {
+      "year": 2024,
+      "barrels": 393.6
+    },
+    {
+      "year": 2025,
+      "barrels": 413.2
+    },
+    {
+      "year": 2026,
+      "barrels": 340.3
+    }
+  ],
+  "events": [
+    {
+      "year": 2022,
+      "label": "Historic 180M-barrel release"
+    }
+  ]
+}
