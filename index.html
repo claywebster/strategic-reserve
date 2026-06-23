@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Draining the Reserve — U.S. Strategic Petroleum Reserve Tracker</title>
+  <meta name="description" content="The U.S. Strategic Petroleum Reserve has fallen to its lowest level since 1983. Track the depletion, crude prices, exporters, and the Strait of Hormuz." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="eyebrow">U.S. Strategic Petroleum Reserve</p>
+      <h1 class="hero__title">The Reserve is <span class="draining">Draining</span></h1>
+
+      <div class="bigstat">
+        <div class="bigstat__num"><span id="hero-current">331.2</span><span class="bigstat__unit">M&nbsp;barrels</span></div>
+        <div class="bigstat__delta" id="hero-delta">▼ 9M barrels in the latest decline</div>
+      </div>
+
+      <p class="hero__since">Its lowest level since <strong id="hero-since">July 1983</strong>.</p>
+      <p class="hero__lede">
+        America's emergency oil stockpile — built after the 1970s shocks to cushion the
+        nation against supply crises — has lost more than half its volume since its 2010
+        peak. This is what depletion looks like.
+      </p>
+
+      <div class="hero__pills">
+        <div class="pill">
+          <span class="pill__label">Down from 2010 peak</span>
+          <span class="pill__val" id="pill-peak">—</span>
+        </div>
+        <div class="pill">
+          <span class="pill__label">Lost since peak</span>
+          <span class="pill__val" id="pill-lost">—</span>
+        </div>
+        <div class="pill">
+          <span class="pill__label">Share of peak remaining</span>
+          <span class="pill__val" id="pill-remain">—</span>
+        </div>
+      </div>
+      <a class="scrolldown" href="#spr">See the decline ↓</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- SPR CHART -->
+    <section id="spr" class="section">
+      <div class="section__head">
+        <h2>Twenty years of drawdown</h2>
+        <p>Year-end crude oil held in the Strategic Petroleum Reserve, every year since 2006.</p>
+      </div>
+      <div class="card card--chart">
+        <div class="chart-box chart-box--tall"><canvas id="sprChart"></canvas></div>
+      </div>
+      <p class="caption" id="sprCaption">Source: U.S. EIA.</p>
+    </section>
+
+    <!-- SECONDARY GRID -->
+    <section class="section">
+      <div class="grid">
+
+        <!-- WTI -->
+        <div class="card">
+          <div class="card__head">
+            <h3>Light sweet crude</h3>
+            <div class="card__big"><span id="wti-current">—</span><span class="card__big-unit">/bbl</span></div>
+          </div>
+          <p class="card__sub" id="wti-sub">WTI spot, Cushing OK</p>
+          <div class="chart-box chart-box--sm"><canvas id="wtiChart"></canvas></div>
+        </div>
+
+        <!-- HORMUZ -->
+        <div class="card">
+          <div class="card__head">
+            <h3>Strait of Hormuz</h3>
+            <div class="card__big"><span id="hormuz-flow">—</span><span class="card__big-unit">Mbbl/d</span></div>
+          </div>
+          <p class="card__sub">Total oil flow through the world's most critical chokepoint</p>
+          <div class="statrow">
+            <div class="stat">
+              <span class="stat__val" id="hormuz-ships">—</span>
+              <span class="stat__label">tankers per day</span>
+            </div>
+            <div class="stat">
+              <span class="stat__val" id="hormuz-share">~20%</span>
+              <span class="stat__label">of global oil</span>
+            </div>
+          </div>
+          <p class="card__note" id="hormuz-note"></p>
+        </div>
+
+        <!-- EXPORTERS -->
+        <div class="card card--wide">
+          <div class="card__head">
+            <h3>Who ships the world's crude</h3>
+            <span class="card__year" id="exp-year"></span>
+          </div>
+          <p class="card__sub" id="exp-sub">Crude oil exports by country</p>
+          <div class="chart-box chart-box--exp"><canvas id="expChart"></canvas></div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Data: <a href="https://www.eia.gov/" target="_blank" rel="noopener">U.S. Energy Information Administration</a>.
+       SPR series WCSSTUS1 · WTI series RWTC · International exports · World Oil Transit Chokepoints.</p>
+    <p class="footer__updated">Last updated <span id="last-updated">—</span> · Auto-refreshed from the EIA API.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

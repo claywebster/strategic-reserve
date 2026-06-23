@@ -1,0 +1,299 @@
+:root {
+  --bg: #0a0805;
+  --bg-2: #120d07;
+  --panel: #1a130b;
+  --panel-edge: #2c2114;
+  --ink: #f4ece0;
+  --ink-dim: #b6a586;
+  --ink-faint: #7b6c54;
+  --amber: #f4a52b;
+  --amber-soft: #ffcd6b;
+  --red: #e23b2e;
+  --red-soft: #ff6a4d;
+  --crude: #e9c46a;
+  --maxw: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 700px at 80% -10%, rgba(226, 59, 46, 0.18), transparent 60%),
+    radial-gradient(900px 600px at 0% 10%, rgba(244, 165, 43, 0.10), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 9vw, 7rem) 1.4rem 3rem;
+}
+.hero__inner { max-width: 760px; }
+
+.eyebrow {
+  font-family: "Spline Sans Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  color: var(--amber);
+  margin: 0 0 1.1rem;
+}
+
+.hero__title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.2rem, 11vw, 6.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.6rem;
+  text-transform: uppercase;
+}
+.draining {
+  background: linear-gradient(92deg, var(--amber-soft), var(--red));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bigstat { margin: 0 0 1.2rem; }
+.bigstat__num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  line-height: 1;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.bigstat__unit {
+  font-size: clamp(1.1rem, 3.5vw, 1.7rem);
+  color: var(--ink-dim);
+  font-weight: 600;
+}
+.bigstat__delta {
+  font-family: "Spline Sans Mono", monospace;
+  color: var(--red-soft);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  margin-top: 0.4rem;
+}
+
+.hero__since {
+  font-size: 1.15rem;
+  color: var(--ink-dim);
+  margin: 0 0 1.4rem;
+}
+.hero__since strong { color: var(--amber-soft); }
+
+.hero__lede {
+  color: var(--ink-dim);
+  font-size: 1.02rem;
+  max-width: 60ch;
+  margin: 0 0 2rem;
+}
+
+.hero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.4rem;
+}
+.pill {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--panel-edge);
+  border-radius: 12px;
+  padding: 0.7rem 1.05rem;
+  min-width: 150px;
+}
+.pill__label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin-bottom: 0.25rem;
+}
+.pill__val {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--amber);
+}
+
+.scrolldown {
+  display: inline-block;
+  color: var(--ink-dim);
+  text-decoration: none;
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 0.85rem;
+  border-bottom: 1px dashed var(--ink-faint);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.scrolldown:hover { color: var(--amber); }
+
+/* ---------- SECTIONS ---------- */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2.2rem 1.4rem;
+}
+.section__head { margin-bottom: 1.3rem; }
+.section__head h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  margin: 0 0 0.3rem;
+}
+.section__head p { color: var(--ink-dim); margin: 0; }
+
+/* ---------- CARDS ---------- */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12)), var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 16px;
+  padding: 1.3rem 1.4rem;
+  box-shadow: 0 24px 60px -40px rgba(0,0,0,0.9);
+}
+.card--chart { padding: 1.5rem 1.5rem 1rem; }
+
+/* Chart containers: fixed-height boxes so Chart.js (maintainAspectRatio:false)
+   sizes correctly and stays crisp on every screen. */
+.chart-box { position: relative; width: 100%; }
+.chart-box canvas { position: absolute; inset: 0; }
+.chart-box--tall { height: clamp(300px, 46vw, 460px); }
+.chart-box--sm  { height: 200px; }
+.chart-box--exp { height: 300px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+}
+.card--wide { grid-column: 1 / -1; }
+
+.card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.2rem;
+}
+.card__head h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--ink);
+}
+.card__big {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: var(--amber);
+  white-space: nowrap;
+}
+.card__big-unit { font-size: 1rem; color: var(--ink-faint); margin-left: 0.15rem; }
+.card__year {
+  font-family: "Spline Sans Mono", monospace;
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+}
+.card__sub { color: var(--ink-dim); font-size: 0.88rem; margin: 0 0 0.9rem; }
+.card__note {
+  color: var(--ink-faint);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  margin: 0.9rem 0 0;
+  border-top: 1px solid var(--panel-edge);
+  padding-top: 0.7rem;
+}
+
+.statrow { display: flex; gap: 1.6rem; margin: 0.4rem 0 0; }
+.stat { display: flex; flex-direction: column; }
+.stat__val {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: var(--red-soft);
+  line-height: 1;
+}
+.stat__label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin-top: 0.2rem;
+}
+
+.caption { color: var(--ink-faint); font-size: 0.8rem; margin: 0.8rem 0 0; }
+
+/* ---------- FOOTER ---------- */
+.footer {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 2rem auto 0;
+  padding: 2.4rem 1.4rem 3.4rem;
+  border-top: 1px solid var(--panel-edge);
+  color: var(--ink-faint);
+  font-size: 0.82rem;
+}
+.footer a { color: var(--amber); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer__updated { margin-top: 0.4rem; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 760px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero { padding-top: clamp(2.5rem, 12vw, 4rem); }
+  .card__head { flex-wrap: wrap; }
+  .card__big { font-size: 1.8rem; }
+  .statrow { gap: 1.2rem; }
+  .chart-box--exp { height: 340px; }
+}
+
+@media (max-width: 420px) {
+  .hero__pills { gap: 0.55rem; }
+  .pill { flex: 1 1 calc(50% - 0.55rem); min-width: 0; padding: 0.6rem 0.8rem; }
+  .pill__val { font-size: 1.45rem; }
+  .bigstat__num { font-size: clamp(2.6rem, 16vw, 3.4rem); }
+  .card { padding: 1.1rem 1.05rem; }
+  .card--chart { padding: 1.2rem 0.9rem 0.8rem; }
+}
+
+@media (hover: none) {
+  /* Larger touch targets / no hover dashes on touch devices */
+  .scrolldown { border-bottom-style: solid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; }
+}
