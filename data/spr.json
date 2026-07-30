@@ -1,8 +1,8 @@
 {
-  "asOf": "2026-07-23",
+  "asOf": "2026-07-30",
   "unit": "million barrels",
-  "current": 311.4,
-  "latestDropM": 5.1,
+  "current": 307.7,
+  "latestDropM": 3.8,
   "lowestSince": "July 1983",
   "peak": {
     "year": 2010,
@@ -93,7 +93,7 @@
     },
     {
       "year": 2026,
-      "barrels": 311.4
+      "barrels": 307.7
     }
   ],
   "events": [
