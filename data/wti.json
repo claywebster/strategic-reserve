@@ -1,15 +1,11 @@
 {
-  "asOf": "2026-08-07",
+  "asOf": "2026-09-02",
   "unit": "USD per barrel",
-  "current": 80.46,
+  "current": 83.9,
   "label": "Cushing, OK WTI Spot Price FOB (light sweet crude)",
   "source": "U.S. Energy Information Administration (RWTC)",
   "sourceUrl": "https://www.eia.gov/dnav/pet/hist/rwtcd.htm",
   "series": [
-    {
-      "date": "2023-08",
-      "price": 81.39
-    },
     {
       "date": "2023-09",
       "price": 89.43
@@ -149,6 +145,10 @@
     {
       "date": "2026-07",
       "price": 80.46
+    },
+    {
+      "date": "2026-08",
+      "price": 83.9
     }
   ]
 }
